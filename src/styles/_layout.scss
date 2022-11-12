@@ -1,0 +1,23 @@
+.main-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  header {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+
+  .form-container {
+    width: 60%;
+    min-height: 220px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    align-items: center;
+    background-color: $bg-form;
+  }
+}
