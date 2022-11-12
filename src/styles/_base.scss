@@ -30,3 +30,27 @@ p, h1,h2,h3,h4,h5,h6 {
 #root, #__next {
   isolation: isolate;
 }
+
+input, button {
+  border: $border-pattern;
+  border-radius: 10px;
+}
+
+textarea {
+  border: $border-pattern;
+  border-radius: 10px;
+  resize: none;
+}
+
+button {
+  transition: 0.1s;
+  background-color: $bg-first-btn;
+}
+
+button:hover {
+  background-color: $bg-second-btn;
+}
+
+button:active {
+  background-color: $bg-last-btn;
+}
