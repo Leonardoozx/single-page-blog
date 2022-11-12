@@ -6,12 +6,13 @@
   align-items: center;
 
   header {
+    font-size: 30px;
     margin-top: 25px;
     margin-bottom: 25px;
   }
 
   .form-container {
-    width: 50%;
+    width: 70%;
     min-height: 220px;
     justify-content: center;
     display: flex;
@@ -20,10 +21,31 @@
     align-items: center;
     background-color: $bg-form;
 
+    @media screen and (min-width: 500px) and (max-width: 1000px) {
+      width: 80%;
+    }
+
     div {
       display: flex;
       flex-direction: column;
       width: 70%;
+      @media screen and (min-width: 500px) and (max-width: 1000px) {
+        width: 80%;
+      }
     }
+  }
+}
+
+.comment-container {
+  border-radius: 15px;
+  background-color: $bg-form;
+  margin-top: 25px;
+  width: 60%;
+  height: 200px;
+  border: $border-pattern;
+  display: flex;
+  @media screen and (min-width: 500px) and (max-width: 1000px) {
+    width: 70%;
+    height: 240px;
   }
 }
