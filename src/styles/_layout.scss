@@ -9,6 +9,9 @@
     font-size: 30px;
     margin-top: 25px;
     margin-bottom: 25px;
+    @media screen and (max-width: 499px) {
+      text-align: center;      
+    }
   }
 
   .form-container {
@@ -20,9 +23,13 @@
     border-radius: 20px;
     align-items: center;
     background-color: $bg-form;
+    border: $border-pattern;
 
     @media screen and (min-width: 500px) and (max-width: 1000px) {
       width: 80%;
+    }
+    @media screen and (max-width: 499px){
+      width: 97%;
     }
 
     div {
@@ -31,6 +38,9 @@
       width: 70%;
       @media screen and (min-width: 500px) and (max-width: 1000px) {
         width: 80%;
+      }
+      @media screen and (max-width: 499px) {
+        width: 95%;        
       }
     }
   }
@@ -42,10 +52,13 @@
   margin-top: 25px;
   width: 60%;
   height: 200px;
-  border: $border-pattern;
   display: flex;
   @media screen and (min-width: 500px) and (max-width: 1000px) {
     width: 70%;
+    height: 240px;
+  }
+  @media screen and (max-width: 499px) {
+    width: 93%;   
     height: 240px;
   }
 }

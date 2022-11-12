@@ -41,6 +41,9 @@ $input-button-wdt: 150px;
 
     .comment-date {
       align-self: flex-end;
+      @media screen and (max-width: 499px) {
+        align-self: flex-start;
+      }
     }
   }
 
@@ -54,6 +57,12 @@ $input-button-wdt: 150px;
 
     @media screen and (min-width: 500px) and (max-width: 1000px) {
       width: 30%;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-end;
+    }
+    @media screen and (max-width: 499px) {
+      width: 30%;      
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-end;
