@@ -3,9 +3,9 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 
-app.use(cors({ origin: process.env.API_URL }));
-
 const app = express();
+
+app.use(cors({ origin: process.env.API_URL }));
 
 const commentRoutes = require('./routes/comments.routes');
 
