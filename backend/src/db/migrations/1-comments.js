@@ -15,7 +15,6 @@ module.exports = {
       content: {
         type: Sequelize.STRING,
         allowNull: true,
-        defaultValue: null,
       },
       date: {
         type: Sequelize.DATE,
