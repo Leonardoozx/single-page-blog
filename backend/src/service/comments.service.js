@@ -1,4 +1,4 @@
-const { Comments, sequelize } = require('../db/models');
+const { Comments } = require('../db/models');
 
 class CommentsServices {
   formatedDate = new Date().toLocaleString().split(', ').join(' ');

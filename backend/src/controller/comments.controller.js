@@ -4,6 +4,7 @@ class CommentsController {
   commentsService = new CommentsServices();
 
   getAllComments = async (_req, res) => {
+    res.header("Access-Control-Allow-Origin", "*")
     const allComments = await this.commentsService.getAllComments();
     res.status(200).json(allComments);
   };
