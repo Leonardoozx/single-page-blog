@@ -6,6 +6,8 @@ const CommentsController = require('../controller/comments.controller');
 
 const commentsController = new CommentsController()
 
+router.use(sendCORSMiddleware);
+
 router.get('/', commentsController.getAllComments);
 router.post('/', commentsController.postNewComment)
 router.put('/:name', commentsController.updateCommentByName);
