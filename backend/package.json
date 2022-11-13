@@ -5,7 +5,7 @@
   "main": "src/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prestart": "npx run sequelize db:migrate && npx sequelize db:seed:all",
+    "prestart": "npx sequelize db:migrate && npx sequelize db:seed:all",
     "start": "node .",
     "dev": "nodemon ."
   },
