@@ -6,7 +6,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.
 
-Techs I've used: 
-  Backend: Express, ORM (Sequelize), Postgres, MSC (Model Service Controller)
-  Frontend: ReactJS, ContextAPI, React Hooks
-  Both of stacks was loaded in Node.JS
+### Techs I've used: 
+  <p>Backend: Express, ORM (Sequelize), Postgres, MSC (Model Service Controller) </P>
+  <p>Frontend: ReactJS, ContextAPI, React Hooks</p>
+  <p>Both of stacks was loaded in Node.JS</p>
