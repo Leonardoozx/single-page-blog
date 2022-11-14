@@ -10,14 +10,12 @@ class CommentsController {
   };
 
   postNewComment = async ({ body }, res) => {
-    res.header("Access-Control-Allow-Origin", "*")
     const { type, message } = await this.commentsService.postNewComment(body);
     if (type) return res.status(400).json({ message });
     res.status(201).json(message);
   };
 
   updateCommentByName = async ({ body, params }, res) => {
-    res.header("Access-Control-Allow-Origin", "*")
     const { type, message } = await this.commentsService.updateCommentByName(
       body.content,
       params.name
@@ -27,7 +25,6 @@ class CommentsController {
   };
 
   deleteCommentByName = async ({ params }, res) => {
-    res.header("Access-Control-Allow-Origin", "*")
     const { type, message } = await this.commentsService.deleteCommentByName(
       params.name
     );
