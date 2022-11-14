@@ -15,22 +15,27 @@ function Blog() {
     setGenericState
   } = useContext(context);
 
+  // the function bellow is the param to setGenericState to reset the blog inputs
+  
+  const removeValuesFromInput = () => {
+    const defaultTarget = (name) => ({ target: { name, value: '' } });
+    setGenericState(defaultTarget('nameInput'));
+    setGenericState(defaultTarget('commentInput'));
+  };
+
   const handleSubmitClick = async (e) => {
     e.preventDefault();
-    const defaultTarget = (name) => ({ target: { name, value: '' } });
     const body = { user: genericState.nameInput, content: genericState.commentInput };
     if (willEdit) {
       await updateComment(userId, body);
       setWillEdit(false);
       setHasNewComments((prevValue) => prevValue + 1);
-      setGenericState(defaultTarget('nameInput'));
-      setGenericState(defaultTarget('commentInput'));
+      removeValuesFromInput();
       return;
     }
     await postComment(genericState.nameInput, genericState.commentInput);
     setHasNewComments((prevValue) => prevValue + 1);
-    setGenericState(defaultTarget('nameInput'));
-    setGenericState(defaultTarget('commentInput'));
+    removeValuesFromInput();
   };
   return (
     <div className="main-container">
