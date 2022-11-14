@@ -16,7 +16,6 @@ function Blog() {
   } = useContext(context);
 
   // the function bellow is the param to setGenericState to reset the blog inputs
-  
   const removeValuesFromInput = () => {
     const defaultTarget = (name) => ({ target: { name, value: '' } });
     setGenericState(defaultTarget('nameInput'));
@@ -39,7 +38,7 @@ function Blog() {
   };
   return (
     <div className="main-container">
-      <header>A retro single page blog</header>
+      <header>A retro single blog page</header>
       <form className="form-container" onSubmit={handleSubmitClick}>
         <div>
           <CommentInputs />
