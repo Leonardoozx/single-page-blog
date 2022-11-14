@@ -37,8 +37,9 @@ class CommentsServices {
   };
 
   deleteCommentByName = async (user) => {
+    const user = await Comments.findOne({ where: { user } });
     try {
-      await Comments.destroy({ where: { user } });
+      await Comments.destroy({ where: { id: user.id } });
       return { type: null, message: '' };
     } catch (_error) {
       return { type: 'ERROR', message: 'Could not delete your comment :(' };
