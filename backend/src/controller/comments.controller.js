@@ -16,7 +16,7 @@ class CommentsController {
 
   updateCommentById = async ({ body, params }, res) => {
     const { type, message } = await this.commentsService.updateCommentById(
-      body.content,
+      body,
       +params.id
     );
     if (type) return res.status(404).json({ message });
