@@ -6,7 +6,7 @@ class CommentsServices {
   getAllComments = () => Comments.findAll();
 
   updateCommentById = async ({ content, user }, id) => {
-    console.log('taaqui');
+    console.log(user)
     try {
       await Comments.update(
         { user, content, date: this.formatedDate },

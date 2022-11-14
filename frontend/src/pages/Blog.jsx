@@ -18,8 +18,9 @@ function Blog() {
   const handleSubmitClick = async (e) => {
     e.preventDefault();
     const defaultTarget = (name) => ({ target: { name, value: '' } });
+    const body = { user: genericState.nameInput, content: genericState.commentInput };
     if (willEdit) {
-      await updateComment(userId, genericState.commentInput);
+      await updateComment(userId, body);
       setWillEdit(false);
       setHasNewComments((prevValue) => prevValue + 1);
       setGenericState(defaultTarget('nameInput'));
