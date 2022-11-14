@@ -1,3 +1,5 @@
+import CommentButtons from './CommentButtons'
+
 function CommentsCard({comment}) {
   return (
     <div className="comment-container" key={comment.id}>
@@ -8,12 +10,7 @@ function CommentsCard({comment}) {
         <p className="comment-date">{comment.date}</p>
       </div>
       <div className="comment-btns">
-        <button type="button">
-          <img src="https://cdn-icons-png.flaticon.com/512/84/84380.png " alt="edit button" />
-        </button>
-        <button className="delete-btn" type="button">
-          <img src="https://cdn-icons-png.flaticon.com/512/1799/1799391.png" alt="delete button" />
-        </button>
+        <CommentButtons {...comment} />
       </div>
     </div>
   )

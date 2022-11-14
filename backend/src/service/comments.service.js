@@ -5,14 +5,14 @@ class CommentsServices {
 
   getAllComments = () => Comments.findAll();
 
-  updateCommentByName = async (content, id) => {
+  updateCommentById = async (content, id) => {
+    console.log('taaqui')
     try {
       await Comments.update(
         { content, date: this.formatedDate },
         { where: { id } }
       );
       const updatedUserComment = {
-        user,
         content,
         date: this.formatedDate,
       };
@@ -36,7 +36,7 @@ class CommentsServices {
     }
   };
 
-  deleteCommentByName = async (id) => {
+  deleteCommentById = async (id) => {
     try {
       await Comments.destroy({ where: { id } });
       return { type: null, message: '' };

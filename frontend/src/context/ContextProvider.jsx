@@ -11,6 +11,8 @@ function ContextProvider({ children }) {
 
   const [ comments, setComments ] = useState([]);
   const [ hasNewComment, setHasNewComments ] = useState(1);
+  const [ willEdit, setWillEdit ] = useState(false);
+  const [ userId, setUserId ] = useState(0);
 
   const [ genericState, setGenericState ] = useGenericState(INITIAL_STATE);
 
@@ -26,7 +28,11 @@ function ContextProvider({ children }) {
     genericState,
     setGenericState,
     comments,
-    setHasNewComments
+    setHasNewComments,
+    willEdit,
+    setWillEdit,
+    userId,
+    setUserId
   };
 
   return (

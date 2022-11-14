@@ -15,7 +15,7 @@ class CommentsController {
   };
 
   updateCommentById = async ({ body, params }, res) => {
-    const { type, message } = await this.commentsService.updateCommentByName(
+    const { type, message } = await this.commentsService.updateCommentById(
       body.content,
       +params.id
     );
@@ -24,7 +24,7 @@ class CommentsController {
   };
 
   deleteCommentById = async ({ params }, res) => {
-    const { type, message } = await this.commentsService.deleteCommentByName(
+    const { type, message } = await this.commentsService.deleteCommentById(
       +params.id
     );
     if (type) return res.status(404).json({ message });

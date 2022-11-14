@@ -2,15 +2,34 @@ import { useContext } from "react";
 import CommentInputs from "../components/CommentInputs";
 import CommentsCard from "../components/CommentsCard";
 import context from "../context/context";
-import { postComment } from '../services/request';
+import { postComment, updateComment } from '../services/request';
 
 function Blog() {
-  const { genericState, comments, setHasNewComments } = useContext(context);
+  const {
+    userId,
+    willEdit,
+    setWillEdit,
+    genericState,
+    comments,
+    setHasNewComments,
+    setGenericState
+  } = useContext(context);
 
   const handleSubmitClick = async (e) => {
     e.preventDefault();
+    const defaultTarget = (name) => ({ target: { name, value: '' } });
+    if (willEdit) {
+      await updateComment(userId, genericState.commentInput);
+      setWillEdit(false);
+      setHasNewComments((prevValue) => prevValue + 1);
+      setGenericState(defaultTarget('nameInput'));
+      setGenericState(defaultTarget('commentInput'));
+      return;
+    }
     await postComment(genericState.nameInput, genericState.commentInput);
-    setHasNewComments((prevValue) => prevValue + 1)
+    setHasNewComments((prevValue) => prevValue + 1);
+    setGenericState(defaultTarget('nameInput'));
+    setGenericState(defaultTarget('commentInput'));
   };
   return (
     <div className="main-container">
@@ -21,8 +40,8 @@ function Blog() {
           <button type="submit">Send</button>
         </div>
       </form>
-      {comments[0] && comments.map((comment) => (
-        <CommentsCard comment={comment} />
+      {comments[ 0 ] && comments.map((comment) => (
+        <CommentsCard key={comment.id} comment={comment} />
       ))}
     </div>
   )
