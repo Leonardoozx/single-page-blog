@@ -1,7 +1,9 @@
 const { Comments } = require('../db/models');
 
 class CommentsServices {
-  formatedDate = new Date().toLocaleString().split(', ').join(' ');
+  formatedDateTime = new Date().toLocaleDateString();
+  formatedHour = new Date().toLocaleTimeString('en-US');
+  formatedDate = `${this.formatedDateTime} ${this.formatedHour}`;
 
   getAllComments = () => Comments.findAll();
 

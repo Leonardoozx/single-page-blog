@@ -1,6 +1,6 @@
 import CommentButtons from './CommentButtons'
 
-function CommentsCard({comment}) {
+function CommentsCard({ comment }) {
   return (
     <div className="comment-container" key={comment.id}>
       <div className="comment-info">
