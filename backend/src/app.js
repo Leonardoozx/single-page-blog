@@ -9,7 +9,7 @@ const commentRoutes = require('./routes/comments.routes');
 
 app.use(express.json());
 
-app.options('*', cors());
+app.options('*', cors({ origin: '*' }));
 
 app.use('/comments', commentRoutes);
 
