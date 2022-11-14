@@ -19,7 +19,7 @@ function ContextProvider({ children }) {
   useEffect(() => {
     const fetchComments = async () => {
       const { data } = await getAllComents();
-      setComments(data);
+      setComments(data.reverse());
     };
     fetchComments()
   }, [ hasNewComment ]);
