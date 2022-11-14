@@ -8,7 +8,7 @@ const commentsController = new CommentsController();
 
 router.get('/', commentsController.getAllComments);
 router.post('/', commentsController.postNewComment);
-router.put('/:name', commentsController.updateCommentByName);
-router.delete('/:id', commentsController.deleteCommentByName);
+router.put('/:id', commentsController.updateCommentById);
+router.delete('/:id', commentsController.deleteCommentById);
 
 module.exports = router;

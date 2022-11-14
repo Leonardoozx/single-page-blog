@@ -14,5 +14,7 @@ export const postComment = async (user, content) => {
   });
 };
 
+export const deleteComment = (name) => api.delete(`/${name}`);
+
 // async function bellow
 export const getAllComents = () => api.get();

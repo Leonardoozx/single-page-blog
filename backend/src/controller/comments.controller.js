@@ -14,16 +14,16 @@ class CommentsController {
     res.status(201).json(message);
   };
 
-  updateCommentByName = async ({ body, params }, res) => {
+  updateCommentById = async ({ body, params }, res) => {
     const { type, message } = await this.commentsService.updateCommentByName(
       body.content,
-      params.name
+      +params.id
     );
     if (type) return res.status(404).json({ message });
     res.status(200).json(message);
   };
 
-  deleteCommentByName = async ({ params }, res) => {
+  deleteCommentById = async ({ params }, res) => {
     const { type, message } = await this.commentsService.deleteCommentByName(
       +params.id
     );

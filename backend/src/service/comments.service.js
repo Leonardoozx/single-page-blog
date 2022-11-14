@@ -5,11 +5,11 @@ class CommentsServices {
 
   getAllComments = () => Comments.findAll();
 
-  updateCommentByName = async (content, user) => {
+  updateCommentByName = async (content, id) => {
     try {
       await Comments.update(
         { content, date: this.formatedDate },
-        { where: { user } }
+        { where: { id } }
       );
       const updatedUserComment = {
         user,
